@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BARAX CLOTHING - Enquiry</title>
+
+    <!-- SEO -->
+     <meta name="description" content="Send a product enquiry to Barax Clothing. Ask about available clothing designs, sizes, quantities and product information.">
+
+<meta name="keywords" content="Barax Clothing enquiry, product enquiry, clothing sizes, T-shirt enquiry, tracksuit enquiry, Barax products">
+
+<meta name="author" content="Barax Clothing">
+
+<meta name="robots" content="index, follow">
+
+    <!-- Link CSS stylesheet -->
+    <link rel="stylesheet" href="barax css style.css">
+
+    <!-- Link JavaScript -->
+    <script src="JavaScript/baraxScript.js" defer></script>
+</head>
+
+<body>
+    <!-- Website header -->
+    <header>
+        <img src="pictures/Barax logo.webp"
+             alt="Barax Clothing Logo"
+             width="250"
+             height="250">
+
+        <h1>BARAX CLOTHING</h1>
+        <p>Product Enquiry</p>
+    </header>
+
+    <!-- Navigation menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="enquiry.html" aria-current="page">Enquiry</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <hr>
+
+    <!-- Main enquiry content -->
+    <main>
+        <h2>Product Enquiry</h2>
+
+        <p>
+            Interested in our clothing collection?
+            Complete the form below and let us know how we can assist you.
+        </p>
+
+        <!-- Customer enquiry form -->
+        <form id="enquiryForm" action="#" method="post">
+
+            <!-- Customer name -->
+            <label for="name">Full Name:</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                required>
+
+            <!-- Customer email -->
+            <label for="email">Email Address:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+                required>
+
+            <!-- Product selection -->
+            <label for="product">Select Product:</label>
+            <select id="product" name="product" required>
+                <option value="">-- Choose a product --</option>
+                <option value="Doberman 01 T-Shirt">
+                    Doberman 01 T-Shirt - R500
+                </option>
+                <option value="Mini Frenchie T-Shirt">
+                    Mini Frenchie T-Shirt - R500
+                </option>
+                <option value="Dog Tag T-Shirt">
+                    Dog Tag T-Shirt - R500
+                </option>
+                <option value="Velocity Tracksuit">
+                    Velocity Tracksuit - R900
+                </option>
+            </select>
+
+            <!-- Size selection -->
+            <label for="size">Select Size:</label>
+            <select id="size" name="size" required>
+                <option value="">-- Choose a size --</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+
+            <!-- Quantity -->
+            <label for="quantity">Quantity:</label>
+            <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="20"
+                value="1"
+                required>
+
+            <!-- Customer message -->
+            <label for="message">Message:</label>
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Type your enquiry here"
+                required></textarea>
+
+            <!-- Submit button -->
+            <input type="submit" value="Submit Enquiry">
+
+        </form>
+
+        <!-- Customer feedback section -->
+        <section id="feedback" class="about-section">
+            <h3>Customer Feedback</h3>
+
+            <p>
+                We'd love to hear what you think about our products
+                and services. Please complete the feedback form below.
+            </p>
+
+            <!-- Embedded Google feedback form -->
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSewOJ10VW5J0EGC_GDrfBrPbOZy_TPsGXV6jCludj-KFBvruQ/viewform?embedded=true"
+                title="Barax Clothing Customer Feedback Form"
+                width="640"
+                height="1273"
+                loading="lazy">
+                Loading feedback form...
+            </iframe>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Website footer -->
+    <footer>
+        <p>
+            Follow us on:
+            <a
+                href="https://www.instagram.com/baraxofficial?igsh=a2RvOXoxY3ZlZGtv"
+                target="_blank"
+                rel="noopener noreferrer">Instagram</a> |
+            <a
+                href="https://www.facebook.com/share/1JfvU931T3/"
+                target="_blank"
+                rel="noopener noreferrer">Facebook</a>
+        </p>
+
+        <p>&copy; BARAX 2025 | All rights reserved.</p>
+    </footer>
+</body>
+</html>

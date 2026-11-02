@@ -1,0 +1,651 @@
+/* ==========================================
+   BARAX CLOTHING WEBSITE
+   Complete Responsive Stylesheet
+   ========================================== */
+
+/* 1. GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: whitesmoke;
+    color: darkslategray;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* 2. HEADER */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 15px;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+header p {
+    color: orange;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+/* 3. NAVIGATION */
+nav,
+.navbar {
+    background-color: #222;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a,
+.navbar a {
+    display: inline-block;
+    color: #fff;
+    background-color: #555;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+nav a:hover,
+.navbar a:hover {
+    background-color: orange;
+    color: #000;
+}
+
+/* Highlight the current page */
+nav a[aria-current="page"],
+.navbar a[aria-current="page"] {
+    background-color: orange;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Keyboard accessibility */
+nav a:focus-visible,
+.navbar a:focus-visible,
+footer a:focus-visible {
+    outline: 3px solid orange;
+    outline-offset: 3px;
+}
+
+/* Navigation with a list */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+/* 4. HORIZONTAL RULE */
+hr {
+    border: 0;
+    border-top: 2px solid orange;
+    margin: 0;
+}
+
+/* 5. MAIN CONTENT */
+main {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 300px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* 6. HEADINGS */
+h2 {
+    color: #000;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: darkslategray;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* 7. PARAGRAPHS AND LISTS */
+p {
+    margin-bottom: 15px;
+}
+
+ul,
+ol {
+    max-width: 800px;
+    margin: 15px auto;
+    padding-left: 25px;
+    text-align: left;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 8. ABOUT PAGE */
+.about-section {
+    background-color: #fff;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-section h2 {
+    border-bottom: 2px solid orange;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* 9. HERO SECTION */
+.hero {
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.hero h2 {
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Buttons and links inside the hero */
+.hero a {
+    display: inline-block;
+    background-color: orange;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 10. HOMEPAGE SLIDESHOW
+   Supports five images and no pause/play controls */
+
+/* AUTOMATIC SLIDESHOW */
+.slideshow {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    animation: baraxSlideshow 16s infinite;
+}
+
+.slides img {
+    width: 25%;
+    flex: 0 0 25%;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* FOUR-IMAGE SLIDESHOW ANIMATION */
+@keyframes baraxSlideshow {
+    0%, 20% {
+        transform: translateX(0);
+    }
+
+    25%, 45% {
+        transform: translateX(-25%);
+    }
+
+    50%, 70% {
+        transform: translateX(-50%);
+    }
+
+    75%, 95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 11. PRODUCTS SECTION
+   Matches <section class="products" id="shop"> */
+
+.products,
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 25px auto;
+    align-items: stretch;
+}
+
+/* Product cards */
+.product-item {
+    min-width: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.product-item h3 {
+    font-size: 1.15rem;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.product-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 0 auto 12px;
+}
+
+.product-item p {
+    color: darkslategray;
+    margin-bottom: 10px;
+}
+
+.product-item p:last-child {
+    color: #b85c00;
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* 12. PRODUCT SEARCH AND FILTER
+   Supports common search controls if added by JavaScript */
+
+#productSearch,
+#searchInput,
+.product-search {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto 25px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* 13. GENERAL IMAGES */
+main img {
+    max-width: 100%;
+}
+
+/* 14. VIDEO */
+video {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 15. FORMS */
+form {
+    width: 100%;
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin: 12px 0 5px;
+    color: #222;
+    font-weight: bold;
+}
+
+/* Text fields, dropdowns and text areas */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #222;
+    font-size: 1rem;
+}
+
+/* Text area */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Focus state */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid orange;
+    border-color: orange;
+}
+
+/* Checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin: 8px;
+    accent-color: orange;
+}
+
+/* Submit buttons */
+input[type="submit"],
+button[type="submit"] {
+    display: inline-block;
+    width: auto;
+    min-width: 150px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: orange;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 16. MAPS AND EMBEDDED FORMS */
+iframe {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    min-height: 300px;
+    margin: 25px auto;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* 17. LINKS IN MAIN CONTENT */
+main a {
+    color: #a94f00;
+}
+
+main a:hover {
+    color: #000;
+}
+
+/* 18. FOOTER */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 22px 15px;
+    margin-top: 40px;
+    border-top: 3px solid orange;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: lightblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* 19. TABLET RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+    .products,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .slideshow {
+        height: 400px;
+    }
+
+    .product-item img {
+        height: 230px;
+    }
+}
+
+/* 20. MOBILE RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    header img {
+        max-width: 150px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav,
+    .navbar {
+        gap: 8px;
+        padding: 10px 5px;
+    }
+
+    nav a,
+    .navbar a {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+    }
+
+    main {
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.45rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    .hero {
+        padding: 5px;
+    }
+
+    .slideshow {
+        height: 250px;
+        margin: 20px auto;
+    }
+
+    .products,
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .product-item {
+        padding: 15px;
+    }
+
+    .product-item img {
+        height: 280px;
+    }
+
+    .about-section {
+        padding: 18px;
+    }
+
+    form {
+        padding: 16px;
+    }
+
+    input[type="submit"],
+    button[type="submit"] {
+        width: 100%;
+    }
+
+    iframe {
+        min-height: 250px;
+    }
+
+    footer {
+        padding: 18px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 21. EXTRA SMALL SCREENS */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav a,
+    .navbar a {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .slideshow {
+        height: 200px;
+    }
+
+    .product-item img {
+        height: 220px;
+    }
+}
+
+/* 22. REDUCED MOTION ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .slides {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+
+    .product-item:hover {
+        transform: none;
+    }
+}
